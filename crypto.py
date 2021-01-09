@@ -1,8 +1,7 @@
 from Crypto.Cipher import AES
 
-key = b'some' * 4  # Use a stored / generated key
-
-# data_to_encrypt = 'This is the message i want to send'  # This is your data
+key = b'some' * 4  # Use 16 or 32 bit password
+data_to_encrypt = 'This is the message i want to send'  # This is your data
 
 cipher_encrypt = AES.new(key, AES.MODE_CFB)
 iv = cipher_encrypt.iv
@@ -20,4 +19,3 @@ def decryption(ciphered_data):
     decrypted_data = deciphered_bytes
     return decrypted_data
 
-# print(decryption(encryption(data_to_encrypt)))
